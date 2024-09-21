@@ -27,6 +27,13 @@ public class Main {
         lasunka.outputInfo();
     }
 
+    public static void packingNaminaiko(){
+        GiftSetBuilder gift=new NaminaikoStandart();
+        director.setBuilder(gift);
+        GiftSet naminaiko=director.buildGift(priceLollipops,priceChocolates,priceWaffles,priceDragee);
+        naminaiko.outputInfo();
+    }
+
     public static double getData(String txt){
         while (true){
             try {
