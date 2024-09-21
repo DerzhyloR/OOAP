@@ -91,6 +91,7 @@ public class Main {
                 break;
             }catch (Exception e){
                 System.out.println("Помилка вибору!");
+                scanner.next();
             }
         }
         if(number==1){
@@ -98,8 +99,6 @@ public class Main {
         }
         return value;
     }
-
-
 
     public static double getData(String txt){
         while (true){
