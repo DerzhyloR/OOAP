@@ -34,6 +34,13 @@ public class Main {
         naminaiko.outputInfo();
     }
 
+    public static void packingPanKotsky(){
+        GiftSetBuilder gift=new PanKotskyExtra();
+        director.setBuilder(gift);
+        GiftSet panKotsky=director.buildGift(priceLollipops,priceChocolates,priceWaffles,priceDragee);
+        panKotsky.outputInfo();
+    }
+
     public static double getData(String txt){
         while (true){
             try {
