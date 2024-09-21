@@ -29,6 +29,6 @@ public class PanKotskyExtra implements GiftSet{
 
     @Override
     public GiftSetInfo getGift() {
-        return null;
+        return gift;
     }
 }
