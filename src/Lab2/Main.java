@@ -6,12 +6,25 @@ import java.util.Scanner;
 public class Main {
 
     private static Scanner scanner= new Scanner(System.in);
+    private static Director director= new Director();
+    private static double priceLollipops=0;
+    private static double priceChocolates=0;
+    private static double priceWaffles=0;
+    private static double priceDragee=0;
 
     public static void main(String [] args){
-        double priceLollipops=getData("Ціна за кг льодяників:  ");
-        double priceChocolates=getData("Ціна за кг шоколадних цукерок:  ");
-        double priceWaffles=getData("Ціна за кг вафлів:  ");
-        double priceDragee=getData("Ціна за кг драже:  ");
+        priceLollipops=getData("Ціна за кг льодяників:  ");
+        priceChocolates=getData("Ціна за кг шоколадних цукерок:  ");
+        priceWaffles=getData("Ціна за кг вафлів:  ");
+        priceDragee=getData("Ціна за кг драже:  ");
+    }
+
+
+    public static void packingLasunka(){
+        GiftSetBuilder gift=new LasunkaEconomy();
+        director.setBuilder(gift);
+        GiftSet lasunka=director.buildGift(priceLollipops,priceChocolates,priceWaffles,priceDragee);
+        lasunka.outputInfo();
     }
 
     public static double getData(String txt){
