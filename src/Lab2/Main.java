@@ -88,7 +88,12 @@ public class Main {
             try {
                 System.out.println("Продовжити пакування?\n1.Так\n2.Ні\nВаш вибір: ");
                 number = scanner.nextInt();
-                break;
+                if(number>0 && number<3){
+                    break;
+                }
+                else {
+                    System.out.println("Помилка вибору!");
+                }
             }catch (Exception e){
                 System.out.println("Помилка вибору!");
                 scanner.next();
