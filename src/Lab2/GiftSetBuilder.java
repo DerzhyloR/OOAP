@@ -1,13 +1,13 @@
 package Lab2;
 
 public abstract class GiftSetBuilder {
-    GiftSet giftSet= new GiftSet();
+    protected GiftSet giftSet= new GiftSet();
 
-    public abstract void setNameGift(double price);
-    public abstract void setLollipops(double price);
-    public abstract void setChocolates(double price);
-    public abstract void setWaffles(double price);
-    public abstract void setDragee(double price);
+    public abstract void setNameGift();
+    public abstract void setLollipops();
+    public abstract void setChocolates();
+    public abstract void setWaffles();
+    public abstract void setDragee();
 
     public GiftSet getGiftSet(){
         return giftSet;
