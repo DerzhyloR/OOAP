@@ -1,30 +1,32 @@
 package Lab2_1;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Buying {
-    Map<String,Facade> ordering=new HashMap<>();
+    List<Facade> ordering=new ArrayList<>();
     String materials[]={"Плівковий","Фарбований","Пластиковий"};
 
     public void addNewFacade(Facade facade){
-        ordering.put(facade.getMaterial(),facade);
+        ordering.add(facade);
     }
 
     public void outputOrdering(){
+        System.out.println("---------------------------------------------------");
         for(int i=0;i<materials.length;i++) {
             int kilkist=0;
             double totalPrice=0;
-            for (Map.Entry<String,Facade>facade:ordering.entrySet()) {
-                if(facade.getValue().getMaterial().equals(materials[i])){
-                    System.out.println("Тип фасаду: "+facade.getValue().getTypeFacade()+"\tРозмір: "+facade.getValue().getSize()+" кв.м"+
-                            "\tМатеріал:"+facade.getValue().getMaterial()+"\tЦіна: "+facade.getValue().getPrice()+" грн");
+            for (Facade facade:ordering) {
+                if(facade.getMaterial().equals(materials[i])){
+                    System.out.format("Тип фасаду: %-10s\tРозмір: %-8.2f кв.м\tМатеріал: %-10s\tЦіна: %-10.2f грн",
+                            facade.getTypeFacade(),facade.getSize(),facade.getMaterial(),facade.getPrice());
+                    System.out.println();
                     kilkist++;
-                    totalPrice+=facade.getValue().getPrice();
+                    totalPrice+=facade.getPrice();
                 }
             }
             if(kilkist!=0){
-                System.out.println("Загальна ціна замовдення: "+totalPrice+" грн");
+                System.out.println("Загальна ціна замовлення: "+totalPrice+" грн");
                 System.out.println("---------------------------------------------------");
             }
         }
