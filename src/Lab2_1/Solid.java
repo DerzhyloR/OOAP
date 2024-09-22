@@ -15,16 +15,16 @@ public class Solid implements Facade{
 
     @Override
     public String getTypeFacade() {
-        return null;
+        return "Суцільний";
     }
 
     @Override
     public double getSize() {
-        return 0;
+        return width*height;
     }
 
     @Override
     public double getPrice() {
-        return 0;
+        return getSize()*price;
     }
 }
