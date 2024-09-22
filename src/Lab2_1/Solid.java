@@ -27,4 +27,8 @@ public class Solid implements Facade{
     public double getPrice() {
         return getSize()*price;
     }
+
+    public String getMaterial(){
+        return material;
+    }
 }
