@@ -4,4 +4,5 @@ public interface Facade {
     String getTypeFacade();
     double getSize();
     double getPrice();
+    String getMaterial();
 }

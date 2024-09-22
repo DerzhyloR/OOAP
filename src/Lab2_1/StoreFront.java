@@ -28,6 +28,7 @@ public class StoreFront implements Facade{
         return getSize()*price;
     }
 
+    @Override
     public String getMaterial(){
         return material;
     }
