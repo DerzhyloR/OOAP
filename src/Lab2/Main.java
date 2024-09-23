@@ -109,7 +109,13 @@ public class Main {
         while (true){
             try {
                 System.out.println(txt);
-                return scanner.nextDouble();
+                double number=scanner.nextDouble();
+                if(number>0){
+                    return number;
+                }
+                else{
+                    System.out.println("ПОМИЛКА ВВОДУ! Повторіть спробу");
+                }
             }catch (Exception e){
                 System.out.println("ПОМИЛКА ВВОДУ! Повторіть спробу");
                 scanner.next();

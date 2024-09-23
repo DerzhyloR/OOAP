@@ -55,6 +55,13 @@ public class Main {
         while (true){
             try {
                 System.out.println(txt);
+                double number=scanner.nextDouble();
+                if(number>0){
+                    return number;
+                }
+                else {
+                    System.out.println("ПОМИЛКА ВВОДУ! Повторіть спробу");
+                }
                 return scanner.nextDouble();
             }catch (Exception e){
                 System.out.println("ПОМИЛКА ВВОДУ! Повторіть спробу");
