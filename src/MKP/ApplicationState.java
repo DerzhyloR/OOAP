@@ -25,8 +25,8 @@ public class ApplicationState {
         return MaxSize;
     }
 
-    public void outputData(){
-        System.out.println("LoginId = "+getLoginId()+"\nMaxSize = "+getMaxSize());
+    public void outputData(int numberOfInstance){
+        System.out.println("\nЕкземпляр №"+numberOfInstance+"\nLoginId = "+getLoginId()+"\nMaxSize = "+getMaxSize());
     }
 
     public static ApplicationState getInstance() {

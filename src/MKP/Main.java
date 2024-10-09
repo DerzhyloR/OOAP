@@ -5,18 +5,14 @@ import java.util.Scanner;
 public class Main {
     private static Scanner scanner= new Scanner(System.in);
     public static void main(String [] args){
-        ApplicationState appState1 = ApplicationState.getInstance();
-        appState1.setLoginId("User123");
-        appState1.setMaxSize(200);
+        ApplicationState state1 = ApplicationState.getInstance();
+        System.out.println("Введіть перший Id: ");
+        String id=scanner.nextLine();
+        double size=getDataDouble("Введіть перший максимальний розмір: ");
+        state1.setLoginId(id);
+        state1.setMaxSize(size);
+        state1.outputData(1);
 
-        System.out.println("AppState 1:");
-        appState1.outputData();
-
-        ApplicationState appState2 = ApplicationState.getInstance();
-        System.out.println("AppState 2:");
-        appState2.outputData();
-
-        System.out.println("Are both instances the same? " + (appState1 == appState2));
     }
 
     public static double getDataDouble(String txt){
