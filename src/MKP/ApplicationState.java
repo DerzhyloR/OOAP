@@ -8,7 +8,6 @@ public class ApplicationState {
     public ApplicationState(){
         LoginId="Невідомо";
         MaxSize=0;
-        instance=null;
     }
 
     public void setLoginId(String value){
@@ -24,6 +23,17 @@ public class ApplicationState {
 
     public double getMaxSize(){
         return MaxSize;
+    }
+
+    public static ApplicationState getInstance() {
+        if (instance == null) {
+            synchronized (ApplicationState.class) {
+                if (instance == null) {
+                    instance = new ApplicationState();
+                }
+            }
+        }
+        return instance;
     }
 
 }
