@@ -25,6 +25,10 @@ public class ApplicationState {
         return MaxSize;
     }
 
+    public void outputData(){
+        System.out.println("LoginId = "+getLoginId()+"\nMaxSize = "+getMaxSize());
+    }
+
     public static ApplicationState getInstance() {
         if (instance == null) {
             synchronized (ApplicationState.class) {
@@ -35,5 +39,4 @@ public class ApplicationState {
         }
         return instance;
     }
-
 }
