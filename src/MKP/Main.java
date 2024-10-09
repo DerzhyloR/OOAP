@@ -14,8 +14,7 @@ public class Main {
         state1.outputData(1);
 
         ApplicationState state2 = ApplicationState.getInstance();
-        ApplicationState appState2 = ApplicationState.getInstance();
-        appState2.outputData(2);
+        state2.outputData(2);
 
         if(state1==state2){
             System.out.println("Екземпляри однакові!");
