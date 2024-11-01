@@ -19,4 +19,9 @@ abstract class Car {
     public abstract String setGuarantee();
     public abstract String setTypeOfInsurance();
 
+    public void outputData(){
+        System.out.print("\nТип оплати: "+clientTypeOfPayment+"\nМарка машини: "+model+"\nЦіна: "+price+"\nТип страхування:"
+        +typeOfInsurance+"\nГарантія:"+guarantee+"\n");
+    }
+
 }
