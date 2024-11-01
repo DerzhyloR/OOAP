@@ -20,7 +20,7 @@ abstract class Car {
     public abstract void setTypeOfInsurance();
 
     public void outputData(){
-        System.out.print("\nТип оплати: "+clientTypeOfPayment+"\nМарка машини: "+model+"\nЦіна: "+price+"\nТип страхування:"
+        System.out.print("Тип оплати: "+clientTypeOfPayment+"\nМарка машини: "+model+"\nЦіна: "+price+"\nТип страхування:"
         +typeOfInsurance+"\nГарантія:"+guarantee+"\n");
     }
 }

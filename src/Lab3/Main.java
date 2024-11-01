@@ -72,13 +72,19 @@ public class Main {
 
     public static boolean isContinue(String txt){
         boolean isCon=false;
-        System.out.println(txt);
-        String res=scanner.nextLine();
-        if(res.toLowerCase().equals("y")){
-            isCon=true;
-        }
-        else {
-            isCon=false;
+        while (true) {
+            System.out.println(txt);
+            String res = scanner.nextLine();
+            if (res.toLowerCase().equals("y")) {
+                isCon = true;
+                break;
+            } else if(res.toLowerCase().equals("n")) {
+                isCon = false;
+                break;
+            }
+            else {
+                System.out.println("Помилка вибору! Повторіть спробу");
+            }
         }
         return isCon;
     }
