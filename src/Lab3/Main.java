@@ -8,20 +8,25 @@ public class Main {
     private static Scanner scanner= new Scanner(System.in);
     public static void main(String [] args){
         Map<Client,Car> data= new HashMap<>();
-        System.out.println("Введіть ім'я клієнта: ");
-        String name=scanner.nextLine();
-        int age=getDataInt("Введіть вік клієнта:",false);
-        System.out.println("Введіть стать клієнта: ");
-        String sex=scanner.nextLine();
-        Client client= new Client(name,age,sex);
-        System.out.println("Введіть марку автомобіля: ");
-        String model=scanner.nextLine();
-        double price=getDataDouble("Введіть ціну автомобіля: ");
-        int chooseTypeOfPayment=getDataInt("Виберіть тип оплати за машину:\n1.Повна оплата\n2.Кредитом\n3.У розстрочку\nВаш вибір: ",true);
-        String typePayment=findoutTypePayment(chooseTypeOfPayment);
-        Car car=null;
-        car=car.creatingObject(chooseTypeOfPayment,typePayment,model,price);
-        data.put(client,car);
+        while (true) {
+            System.out.println("Введіть ім'я клієнта: ");
+            String name = scanner.nextLine();
+            int age = getDataInt("Введіть вік клієнта:", false);
+            System.out.println("Введіть стать клієнта: ");
+            String sex = scanner.nextLine();
+            Client client = new Client(name, age, sex);
+            System.out.println("Введіть марку автомобіля: ");
+            String model = scanner.nextLine();
+            double price = getDataDouble("Введіть ціну автомобіля: ");
+            int chooseTypeOfPayment = getDataInt("Виберіть тип оплати за машину:\n1.Повна оплата\n2.Кредитом\n3.У розстрочку\nВаш вибір: ", true);
+            String typePayment = findoutTypePayment(chooseTypeOfPayment);
+            Car car = null;
+            car = car.creatingObject(chooseTypeOfPayment, typePayment, model, price);
+            data.put(client, car);
+            if (!isContinue("\nВнести нового клієнта?\ny-Так\nn-Ні")){
+                break;
+            }
+        }
 
     }
 
@@ -37,6 +42,19 @@ public class Main {
             res="У розстрочку";
         }
         return res;
+    }
+
+    public static boolean isContinue(String txt){
+        boolean isCon=false;
+        System.out.println(txt);
+        String res=scanner.nextLine();
+        if(res.toLowerCase().equals("y")){
+            isCon=true;
+        }
+        else {
+            isCon=false;
+        }
+        return isCon;
     }
 
     public static double getDataDouble(String txt){
