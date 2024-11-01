@@ -15,9 +15,9 @@ abstract class Car {
         guarantee="Unknown";
     }
 
-    public abstract double finalPrice();
-    public abstract String setGuarantee();
-    public abstract String setTypeOfInsurance();
+    public abstract void finalPrice();
+    public abstract void setGuarantee();
+    public abstract void setTypeOfInsurance();
 
     public void outputData(){
         System.out.print("\nТип оплати: "+clientTypeOfPayment+"\nМарка машини: "+model+"\nЦіна: "+price+"\nТип страхування:"
