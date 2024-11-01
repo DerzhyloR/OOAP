@@ -11,4 +11,8 @@ public class Client {
         this.sex=sex;
     }
 
+    public void getInfo(){
+        System.out.println("\nІм'я клієнта: "+name+"\nВік: "+age+"\nСтать: "+sex);
+    }
+
 }
