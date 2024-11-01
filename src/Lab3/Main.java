@@ -11,17 +11,17 @@ public class Main {
 
     }
 
-    public static int getDataInt(String txt){
+    public static double getDataDouble(String txt){
         while (true){
             try {
                 System.out.println(txt);
-                int chyslo=scanner.nextInt();
+                double chyslo=scanner.nextDouble();
                 scanner.nextLine();
                 if(chyslo>0){
                     return chyslo;
                 }
                 else{
-                    System.out.println("Помилка вибору! Повторіть спробу");
+                    System.out.println("ПОМИЛКА ВВОДУ! Повторіть спробу");
                 }
             }catch (Exception e){
                 System.out.println("ПОМИЛКА ВВОДУ! Повторіть спробу");
