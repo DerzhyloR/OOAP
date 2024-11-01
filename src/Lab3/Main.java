@@ -22,6 +22,9 @@ public class Main {
             int chooseTypeOfPayment = getDataInt("Виберіть тип оплати за машину:\n1.Повна оплата\n2.Кредитом\n3.У розстрочку\nВаш вибір: ", true);
             String typePayment = findoutTypePayment(chooseTypeOfPayment);
             Car car = creatingObject(chooseTypeOfPayment, typePayment, model, price);
+            car.finalPrice();
+            car.setGuarantee();
+            car.setTypeOfInsurance();
             data.put(client, car);
             if (!isContinue("\nВнести нового клієнта?\ny-Так\nn-Ні")){
                 break;
