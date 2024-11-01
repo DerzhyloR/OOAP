@@ -21,14 +21,29 @@ public class Main {
             double price = getDataDouble("Введіть ціну автомобіля: ");
             int chooseTypeOfPayment = getDataInt("Виберіть тип оплати за машину:\n1.Повна оплата\n2.Кредитом\n3.У розстрочку\nВаш вибір: ", true);
             String typePayment = findoutTypePayment(chooseTypeOfPayment);
-            Car car = null;
-            car = car.creatingObject(chooseTypeOfPayment, typePayment, model, price);
+            Car car = creatingObject(chooseTypeOfPayment, typePayment, model, price);
             data.put(client, car);
             if (!isContinue("\nВнести нового клієнта?\ny-Так\nn-Ні")){
                 break;
             }
         }
         outputAllData();
+    }
+
+    public static Car creatingObject(int number,String clientTypeOfPayment,String model, double price){
+        Car obj=null;
+        switch (number){
+            case 1:
+                obj= new FullPayment(clientTypeOfPayment,model,price);
+                break;
+            case 2:
+                obj= new CreditPayment(clientTypeOfPayment,model,price);
+                break;
+            case 3:
+                obj= new InstallmentsPayment(clientTypeOfPayment,model,price);
+                break;
+        }
+        return obj;
     }
 
     public static void outputAllData(){
@@ -104,7 +119,7 @@ public class Main {
                     }
                 }
                 else{
-                    System.out.println("Помилка вибору! Повторіть спробу");
+                    System.out.println("ПОМИЛКА ВВОДУ! Повторіть спробу");
                 }
             }catch (Exception e){
                 System.out.println("ПОМИЛКА ВВОДУ! Повторіть спробу");
