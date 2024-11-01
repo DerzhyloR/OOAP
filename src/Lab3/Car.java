@@ -24,4 +24,20 @@ abstract class Car {
         +typeOfInsurance+"\nГарантія:"+guarantee+"\n");
     }
 
+    public Car creatingObject(int number,String clientTypeOfPayment,String model, double price){
+        Car obj=null;
+        switch (number){
+            case 1:
+                obj= new FullPayment(clientTypeOfPayment,model,price);
+                break;
+            case 2:
+                obj= new CreditPayment(clientTypeOfPayment,model,price);
+                break;
+            case 3:
+                obj= new InstallmentsPayment(clientTypeOfPayment,model,price);
+                break;
+        }
+        return obj;
+    }
+
 }
