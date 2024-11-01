@@ -8,7 +8,7 @@ public class CreditPayment extends Car{
 
     @Override
     public void finalPrice() {
-        double newPrice=price*1.5;
+        double newPrice=price*1.1;
         price=newPrice;
     }
 
