@@ -6,8 +6,9 @@ import java.util.Scanner;
 
 public class Main {
     private static Scanner scanner= new Scanner(System.in);
+    private static Map<Client,Car> data= new HashMap<>();
+
     public static void main(String [] args){
-        Map<Client,Car> data= new HashMap<>();
         while (true) {
             System.out.println("Введіть ім'я клієнта: ");
             String name = scanner.nextLine();
@@ -27,7 +28,14 @@ public class Main {
                 break;
             }
         }
+        outputAllData();
+    }
 
+    public static void outputAllData(){
+        for(Map.Entry<Client,Car>dani:data.entrySet()){
+            dani.getKey().getInfo();
+            dani.getValue().outputData();
+        }
     }
 
     public static String findoutTypePayment(int number){
