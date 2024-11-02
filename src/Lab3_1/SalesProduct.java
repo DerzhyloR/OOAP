@@ -32,15 +32,18 @@ public class SalesProduct {
         switch (number){
             case 1:
                 price=firsPrice*1.15;
+                countClothes++;
                 nameProfuct="Одяг";
                 break;
             case 2:
                 price=firsPrice*1.05;
+                countFood++;
                 nameProfuct="Їжа";
                 break;
             case 3:
                 price=firsPrice*1.10;
                 nameProfuct="Ліки";
+                countMedicine++;
                 break;
         }
         totalPrice+=price;
@@ -52,6 +55,7 @@ public class SalesProduct {
             BufferedWriter writer= new BufferedWriter(new FileWriter("productSalse.txt",true));
             String time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
             writer.write("Час: "+time+"\tТип продукту: "+name+"\tЦіна: "+String.format("%.2f",price)+"\n");
+            writer.close();
         }catch (Exception e){
             System.out.println("Помилка запису у файл!");
         }
@@ -67,7 +71,7 @@ public class SalesProduct {
 
     public void outputResult(){
         System.out.println("\nПідсумок продажів:\nКількість проданого одягу: "+countClothes+"\nКількість проданої їжі: "+countFood
-        +"\nКількість проданих ліків: "+countMedicine+"Загальна суму продажів: "+totalPrice);
+        +"\nКількість проданих ліків: "+countMedicine+"\nЗагальна суму продажів: "+String.format("%.2f",totalPrice));
     }
 
 }

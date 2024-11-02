@@ -42,7 +42,7 @@ public class Main {
                 System.out.println(txt);
                 int chyslo=scanner.nextInt();
                 scanner.nextLine();
-                if(chyslo>0){
+                if(chyslo>0 && chyslo<4){
                     return chyslo;
                 }
                 else{
