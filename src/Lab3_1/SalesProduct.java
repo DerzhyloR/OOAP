@@ -20,7 +20,7 @@ public class SalesProduct {
         totalPrice=0;
     }
 
-    public SalesProduct getObject(){
+    public static SalesProduct getObject(){
         return sales;
     }
 
