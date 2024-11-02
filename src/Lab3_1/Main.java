@@ -10,8 +10,30 @@ public class Main {
         while (true) {
             int number = getDataInt("Виберіть який продукт продати:\n1.Одяг\n2.Їжа\n3.Ліки\nВаш вибір: ");
             sales.finalPrice(number);
+            if(!isContinue("Продовжити продаж товарів?\ny-Так\nn-Ні\nВаш вибір: ")){
+                break;
+            }
         }
+        sales.outputResult();
+    }
 
+    public static boolean isContinue(String txt){
+        boolean isCon=false;
+        while (true) {
+            System.out.println(txt);
+            String res = scanner.nextLine();
+            if (res.toLowerCase().equals("y")) {
+                isCon = true;
+                break;
+            } else if(res.toLowerCase().equals("n")) {
+                isCon = false;
+                break;
+            }
+            else {
+                System.out.println("Помилка вибору! Повторіть спробу");
+            }
+        }
+        return isCon;
     }
 
     public static int getDataInt(String txt){
@@ -32,4 +54,5 @@ public class Main {
             }
         }
     }
+
 }
