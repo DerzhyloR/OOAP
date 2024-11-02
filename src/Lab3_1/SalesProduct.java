@@ -20,23 +20,30 @@ public class SalesProduct {
         return sales;
     }
 
-    private double finalPrice(int number){
+    public void finalPrice(int number){
         Random rand = new Random();
         double firsPrice=50 + (rand.nextDouble() * 500);
         double price=0;
+        String nameProfuct="";
         switch (number){
             case 1:
                 price=firsPrice*1.15;
+                nameProfuct="Одяг";
                 break;
             case 2:
                 price=firsPrice*1.05;
+                nameProfuct="Їжа";
                 break;
             case 3:
                 price=firsPrice*1.10;
+                nameProfuct="Ліки";
                 break;
         }
         totalPrice+=price;
-        return price;
+    }
+
+    public void writeToFile(){
+
     }
 
 
