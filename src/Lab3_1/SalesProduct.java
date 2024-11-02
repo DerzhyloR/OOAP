@@ -57,7 +57,7 @@ public class SalesProduct {
         }
     }
 
-    public void clearFile(){
+    public void clearFileOrCreate(){
         try {
             FileWriter writer = new FileWriter("productSalse.txt", false);
         }catch (Exception e){
@@ -65,5 +65,9 @@ public class SalesProduct {
         }
     }
 
+    public void outputResult(){
+        System.out.println("\nПідсумок продажів:\nКількість проданого одягу: "+countClothes+"\nКількість проданої їжі: "+countFood
+        +"\nКількість проданих ліків: "+countMedicine+"Загальна суму продажів: "+totalPrice);
+    }
 
 }
