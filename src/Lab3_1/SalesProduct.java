@@ -44,6 +44,7 @@ public class SalesProduct {
                 break;
         }
         totalPrice+=price;
+        writeToFile(price,nameProfuct);
     }
 
     private void writeToFile(double price,String name){
@@ -53,6 +54,14 @@ public class SalesProduct {
             writer.write("Час: "+time+"\tТип продукту: "+name+"\tЦіна: "+String.format("%.2f",price)+"\n");
         }catch (Exception e){
             System.out.println("Помилка запису у файл!");
+        }
+    }
+
+    public void clearFile(){
+        try {
+            FileWriter writer = new FileWriter("productSalse.txt", false);
+        }catch (Exception e){
+            System.out.println("Помилка відкриття файлу");
         }
     }
 
