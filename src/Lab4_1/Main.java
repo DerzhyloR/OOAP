@@ -5,7 +5,13 @@ import java.util.Scanner;
 public class Main {
     private static Scanner scanner= new Scanner(System.in);
     public static void main(String [] args){
-
+        int choose=getDataInt("Виберіть який зробити виклик:\n1.Простий\n2.З камерою\nВаш вибір: ");
+        if(choose==1){
+            callWithoutCamera();
+        }
+        else {
+            cameraCall();
+        }
     }
 
     private static void callWithoutCamera(){
