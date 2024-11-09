@@ -6,7 +6,7 @@ public class Main {
     private static Scanner scanner= new Scanner(System.in);
     public static void main(String [] args){
         while (true) {
-            int choose = getDataInt("\nВиберіть який зробити виклик:\n1.Простий\n2.З камерою\nВаш вибір: ");
+            int choose = getDataInt("Виберіть який зробити виклик:\n1.Простий\n2.З камерою\nВаш вибір: ");
             if (choose == 1) {
                 callWithoutCamera();
             } else {
@@ -16,6 +16,7 @@ public class Main {
             if(!value){
                 break;
             }
+            System.out.println();
         }
     }
 
