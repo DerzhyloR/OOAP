@@ -8,5 +8,12 @@ public class Main {
         clock1.toWake();
         clock1.stop();
         System.out.println();
+
+        AlarmClockActions alertClock2= new SecondAlarmClockAlert();
+        AlarmClock clock2=new CreateAlarmClock(alertClock2);
+        clock2.start();
+        clock2.toWake();
+        clock2.stop();
+        System.out.println();
     }
 }
