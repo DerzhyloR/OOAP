@@ -7,4 +7,8 @@ public class CallWithCamera implements Phone{
         this.videoCall=videoCall;
     }
 
+    @Override
+    public void makeCall() {
+        videoCall.makeCallWithCamera();
+    }
 }
