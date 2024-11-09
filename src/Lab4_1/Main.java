@@ -13,6 +13,12 @@ public class Main {
         phone.makeCall();
     }
 
+    private static void cameraCall(){
+        VideoCamera video= new VideoCamera();
+        Phone phone= new CallWithCamera(video);
+        phone.makeCall();
+    }
+
     public static int getDataInt(String txt){
         while (true){
             try {
