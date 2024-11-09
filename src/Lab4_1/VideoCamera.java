@@ -2,6 +2,6 @@ package Lab4_1;
 
 public class VideoCamera {
     public void makeCallWithCamera(){
-        System.out.println("Відео виклик з використанням камери");
+        System.out.println("\nЗдійснився відео виклик з використанням камери");
     }
 }
