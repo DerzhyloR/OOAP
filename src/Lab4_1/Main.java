@@ -5,12 +5,13 @@ import java.util.Scanner;
 public class Main {
     private static Scanner scanner= new Scanner(System.in);
     public static void main(String [] args){
-        int choose=getDataInt("Виберіть який зробити виклик:\n1.Простий\n2.З камерою\nВаш вибір: ");
-        if(choose==1){
-            callWithoutCamera();
-        }
-        else {
-            cameraCall();
+        while (true) {
+            int choose = getDataInt("Виберіть який зробити виклик:\n1.Простий\n2.З камерою\nВаш вибір: ");
+            if (choose == 1) {
+                callWithoutCamera();
+            } else {
+                cameraCall();
+            }
         }
     }
 
@@ -42,5 +43,23 @@ public class Main {
                 scanner.next();
             }
         }
+    }
+    public static boolean isContinue(String txt){
+        boolean isCon=false;
+        while (true) {
+            System.out.println(txt);
+            String res = scanner.nextLine();
+            if (res.toLowerCase().equals("y")) {
+                isCon = true;
+                break;
+            } else if(res.toLowerCase().equals("n")) {
+                isCon = false;
+                break;
+            }
+            else {
+                System.out.println("Помилка вибору! Повторіть спробу");
+            }
+        }
+        return isCon;
     }
 }
