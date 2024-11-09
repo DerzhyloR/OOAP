@@ -17,5 +17,10 @@ public class CreateAlarmClock implements AlarmClock{
         System.out.println("Будильник зупинився!");
     }
 
+    @Override
+    public void toWake() {
+        clockActions.message();
+        clockActions.ring();
+    }
 
 }
