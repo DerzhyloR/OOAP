@@ -7,4 +7,15 @@ public class CreateAlarmClock implements AlarmClock{
         this.clockActions=clockActions;
     }
 
+    @Override
+    public void start() {
+        System.out.println("Будильник запустився!");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Будильник зупинився!");
+    }
+
+
 }
