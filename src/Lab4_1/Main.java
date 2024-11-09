@@ -8,6 +8,11 @@ public class Main {
 
     }
 
+    private static void callWithoutCamera(){
+        Phone phone= new SimpleCall();
+        phone.makeCall();
+    }
+
     public static int getDataInt(String txt){
         while (true){
             try {
