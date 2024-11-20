@@ -8,6 +8,11 @@ public class Main {
     public static void main(String [] args){
         SalesProduct sales=SalesProduct.getObject();
         sales.clearFileOrCreate();
+        while (true) {
+            int number = getDataInt("Виберіть який продукт продати:\n1.Одяг\n2.Їжа\n3.Ліки\nВаш вибір: ");
+            sales.finalPrice(number);
+
+        }
     }
 
     public static int getDataInt(String txt){
