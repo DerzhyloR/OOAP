@@ -61,4 +61,12 @@ public class SalesProduct {
         }
     }
 
+    public void clearFileOrCreate(){
+        try {
+            FileWriter writer = new FileWriter("productSalse.txt", false);
+        }catch (Exception e){
+            System.out.println("Помилка відкриття файлу");
+        }
+    }
+
 }
