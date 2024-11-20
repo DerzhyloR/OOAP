@@ -69,4 +69,9 @@ public class SalesProduct {
         }
     }
 
+    public void outputResult(){
+        System.out.println("\nПідсумок продажів:\nКількість проданого одягу: "+countClothes+"\nКількість проданої їжі: "+countFood
+                +"\nКількість проданих ліків: "+countMedicine+"\nЗагальна суму продажів: "+String.format("%.2f",totalPrice));
+    }
+
 }
