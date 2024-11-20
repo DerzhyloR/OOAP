@@ -11,8 +11,11 @@ public class Main {
         while (true) {
             int number = getDataInt("Виберіть який продукт продати:\n1.Одяг\n2.Їжа\n3.Ліки\nВаш вибір: ");
             sales.finalPrice(number);
-
+            if(!isContinue("Продовжити продаж товарів?\ny-Так\nn-Ні\nВаш вибір: ")){
+                break;
+            }
         }
+        sales.outputResult();
     }
 
     public static boolean isContinue(String txt){
