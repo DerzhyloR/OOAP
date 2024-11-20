@@ -1,5 +1,10 @@
 package MKP2;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class SalesProduct {
     private static final SalesProduct sales= new SalesProduct();
     private int countFood;
@@ -16,6 +21,17 @@ public class SalesProduct {
 
     public static SalesProduct getObject(){
         return sales;
+    }
+
+    private void writeToFile(double price,String name){
+        try{
+            BufferedWriter writer= new BufferedWriter(new FileWriter("productSalse.txt",true));
+            String time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+            writer.write("Час: "+time+"\tТип продукту: "+name+"\tЦіна: "+String.format("%.2f",price)+"\n");
+            writer.close();
+        }catch (Exception e){
+            System.out.println("Помилка запису у файл!");
+        }
     }
 
 }
