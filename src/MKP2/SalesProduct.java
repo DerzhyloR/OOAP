@@ -14,4 +14,8 @@ public class SalesProduct {
         totalPrice=0;
     }
 
+    public static SalesProduct getObject(){
+        return sales;
+    }
+
 }
