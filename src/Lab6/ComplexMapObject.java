@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ComplexMapObject extends MapComponent  {
-    private List<MapComponent> children = new ArrayList<>();
+    public List<MapComponent> children = new ArrayList<>();
 
     public ComplexMapObject(String name, int x, int y) {
         super(name);
