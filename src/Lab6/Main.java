@@ -12,17 +12,13 @@ public class Main {
         while (createMoreCities) {
             System.out.print("Введіть ім'я міста: ");
             String cityName = scanner.nextLine();
-            int cityX =  getDataInt("Введіть координату х для " + cityName + ": ",0);
-            int cityY = getDataInt("Введіть координату у для  " + cityName + ": ",0);
-            scanner.nextLine();
-            ComplexMapObject city = new ComplexMapObject(cityName, cityX, cityY);
+            ComplexMapObject city = new ComplexMapObject(cityName, 0, 0);
             boolean createMoreDistricts = true;
             while (createMoreDistricts) {
                 System.out.print("Введіть назву району: ");
                 String districtName = scanner.nextLine();
                 int districtX = getDataInt("Введіть координату х для " + districtName + ": ",0);
                 int districtY = getDataInt("Введіть координату у для " + districtName + ": ",0);
-                scanner.nextLine();
                 ComplexMapObject district = new ComplexMapObject(districtName, districtX, districtY);
                 boolean createMoreObjects = true;
                 while (createMoreObjects) {
@@ -30,7 +26,6 @@ public class Main {
                     String objectName = scanner.nextLine();
                     int objectX = getDataInt("Введіть координату х для  " + objectName + ": ",0);
                     int objectY = getDataInt("Введіть координату у для " + objectName + ": ",0);
-                    scanner.nextLine();
                     SimpleObject simpleObject = new SimpleObject(objectName, objectX, objectY);
                     district.addComponent(simpleObject);
                     int number=getDataInt("Хочете створити ще однин простий об'єкт для району? 1.так 2.ні : ",2);
@@ -39,7 +34,7 @@ public class Main {
                     }
                 }
                 city.addComponent(district);
-                int number=getDataInt("\"Хочете створити ще один район? 1.так 2.ні : ",2);
+                int number=getDataInt("Хочете створити ще один район? 1.так 2.ні : ",2);
                 if (number==2)  {
                     createMoreDistricts = false;
                 }
@@ -52,7 +47,7 @@ public class Main {
         }
         System.out.println("\n===== Карта міста =====");
         for (ComplexMapObject city : cities) {
-            printComponent(city, 0, 0, ""); // Виводимо місто і все, що в ньому
+            printComponent(city, 0, 0, "");
         }
         System.out.println("========================\n");
         while (true) {
