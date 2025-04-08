@@ -5,10 +5,10 @@ public abstract class Character {
     protected int initialStrength;
     protected int initialDefense;
 
-    public Character(String name, int baseStrength, int baseDefense) {
+    public Character(String name, int initialStrength, int initialDefense) {
         this.name = name;
-        this.initialStrength = baseStrength;
-        this.initialDefense = baseDefense;
+        this.initialStrength = initialStrength;
+        this.initialDefense = initialDefense;
     }
 
     public String getName() {
