@@ -1,4 +1,4 @@
 package lab8;
 
-public class DataTask {
+public interface DataTask {
 }
