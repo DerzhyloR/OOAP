@@ -17,8 +17,6 @@ public class DateInterpreter {
             case "YYYY-MM-DD":
                 dataTask = new YYYYMMDDFormat();
                 break;
-            default:
-                throw new IllegalArgumentException("Невідомий формат дати!");
         }
     }
 

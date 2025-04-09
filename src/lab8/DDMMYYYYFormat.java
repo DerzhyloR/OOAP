@@ -8,6 +8,7 @@ public class DDMMYYYYFormat implements DataTask{
     @Override
     public Date interpret(String date) throws ParseException {
         SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+        format.setLenient(false);
         return format.parse(date);
     }
 }
