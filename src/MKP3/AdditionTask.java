@@ -1,4 +1,8 @@
 package MKP3;
 
-public class AdditionTask extends Vuraz{
+class AdditionTask implements Vuraz {
+    @Override
+    public int interpret(int a, int b) {
+        return a + b;
+    }
 }
