@@ -13,4 +13,8 @@ public class MathInterpreter {
                 break;
         }
     }
+
+    public int interpret(int a, int b) {
+        return vuraz.interpret(a, b);
+    }
 }
