@@ -12,12 +12,8 @@ public class Main {
             int num1 = getDataInt("Введіть перше ціле число: ",true);
             int num2 = getDataInt("Введіть друге ціле число: ",true);
             MathInterpreter mathInterpreter = new MathInterpreter(selectedOperation);
-            try {
-                int result = mathInterpreter.interpret(num1, num2);
-                System.out.println("Результат операції: " + result);
-            } catch (Exception e) {
-                System.out.println("Невірна операція!");
-            }
+            int result = mathInterpreter.interpret(num1, num2);
+            System.out.println("Результат операції: " + result);
             int number = getDataInt("\nВвести нові числа? 1 - так, 2 - ні: ",false);
             if (number == 2) {
                 break;
