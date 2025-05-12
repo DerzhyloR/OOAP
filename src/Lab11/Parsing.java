@@ -5,6 +5,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 import java.util.List;
+import java.util.ArrayList;
 import java.util.concurrent.RecursiveTask;
 
 public class Parsing extends RecursiveTask<List<String>> {
@@ -16,7 +17,24 @@ public class Parsing extends RecursiveTask<List<String>> {
 
     @Override
     protected List<String> compute() {
-        return null;
+        List<String> results = new ArrayList<>();
+        if (urls.size() == 1) {
+            String url = urls.get(0);
+            results.add(parsePage(url));
+        } else {
+            int mid = urls.size() / 2;
+            Parsing task1 = new Parsing(urls.subList(0, mid));
+            Parsing task2 = new Parsing(urls.subList(mid, urls.size()));
+            task1.fork();
+            List<String> result2 = task2.compute();
+            List<String> result1 = task1.join();
+            for (String url : urls.subList(0, mid)) {
+                results.add(parsePage(url));
+            }
+            results.addAll(result1);
+            results.addAll(result2);
+        }
+        return results;
     }
 
     private String parsePage(String url) {
