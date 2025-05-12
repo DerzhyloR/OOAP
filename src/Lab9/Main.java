@@ -1,22 +1,48 @@
 package Lab9;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     private static Scanner scanner=new Scanner(System.in);
     public static void main(String[] args) {
+        List<String>allStates=new ArrayList<>();
+        String currentState="";
         LifePeriod life = new LifePeriod();
         TimeMachine timeMachine = new TimeMachine();
         boolean isAdding=true;
         while (isAdding){
             System.out.println("Введіть етап життя: ");
-            life.setState(scanner.nextLine());
+            currentState=scanner.nextLine();
+            allStates.add(currentState);
+            life.setState(currentState);
             timeMachine.addMemento(life.saveToMemento());
             int number=getDataInt("Хочете додати ще один етап життя? 1.так 2.ні : ",2);
             if (number==2) {
                 isAdding = false;
             }
         }
+        boolean isBack=true;
+        while (isBack){
+            String txt="Оберіть в який етап життя ви хочете повернутися?:";
+            int i=1;
+            for (String state:allStates){
+                txt+="\n"+i+"."+state;
+            }
+            int number=getDataInt(txt,i);
+            if(!currentState.equals(allStates.get(number-1))){
+                currentState=allStates.get(number-1);
+                life.restoreFromMemento(timeMachine.getMemento(number-1));
+                int n=getDataInt("Хочете здійснити ще повернення в часі? 1.так 2.ні : ",2);
+                if (n==2) {
+                    isBack = false;
+                }
+            }else {
+                System.out.println("Ви зараз на цьому етапі! Ви не межете повернутися до нього! ");
+            }
+        }
+
 
     }
 
