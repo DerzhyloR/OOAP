@@ -7,6 +7,16 @@ public class Main {
     public static void main(String[] args) {
         LifePeriod life = new LifePeriod();
         TimeMachine timeMachine = new TimeMachine();
+        boolean isAdding=true;
+        while (isAdding){
+            System.out.println("Введіть етап життя: ");
+            life.setState(scanner.nextLine());
+            timeMachine.addMemento(life.saveToMemento());
+            int number=getDataInt("Хочете додати ще один етап життя? 1.так 2.ні : ",2);
+            if (number==2) {
+                isAdding = false;
+            }
+        }
 
     }
 
@@ -17,9 +27,6 @@ public class Main {
                 int chyslo=scanner.nextInt();
                 scanner.nextLine();
                 if(chyslo>0 && chyslo<=minOptions){
-                    return chyslo;
-                }
-                else if(chyslo>=0 && minOptions==0){
                     return chyslo;
                 }
                 else{
