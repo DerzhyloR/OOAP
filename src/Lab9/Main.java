@@ -26,8 +26,9 @@ public class Main {
         boolean isBack=true;
         while (isBack){
             String txt="Оберіть в який етап життя ви хочете повернутися?:";
-            int i=1;
+            int i=0;
             for (String state:allStates){
+                i++;
                 txt+="\n"+i+"."+state;
             }
             int number=getDataInt(txt,i);
