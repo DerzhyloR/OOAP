@@ -28,9 +28,6 @@ public class Parsing extends RecursiveTask<List<String>> {
             task1.fork();
             List<String> result2 = task2.compute();
             List<String> result1 = task1.join();
-            for (String url : urls.subList(0, mid)) {
-                results.add(parsePage(url));
-            }
             results.addAll(result1);
             results.addAll(result2);
         }
@@ -40,10 +37,9 @@ public class Parsing extends RecursiveTask<List<String>> {
     private String parsePage(String url) {
         try {
             Document doc = Jsoup.connect(url).get();
-            Element titleElement = doc.select("h1.product-title").first();
+            Element titleElement = doc.select("h1").first();
             String title = titleElement != null ? titleElement.text() : "Заголовка не знайдено";
-            System.out.println("Заголовок з " + url + ": " + title);
-            return "Заголовок з " + url + ": " + title;
+            return "Заголовок з " + url + ": " + title+"\n";
         } catch (Exception e) {
             return "ПОМИЛКА ПАРСИНГУ САЙТУ: " + url;
         }
