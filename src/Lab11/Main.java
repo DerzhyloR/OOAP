@@ -6,7 +6,8 @@ public class Main {
     public static void main(String [] args){
         List<String> urls = List.of(
                 "https://www.foxtrot.com.ua/uk/shop/smartfoniy_i_mobilniye_telefoniy_apple_iphone_15_plus_128gb_midnight.html",
-                "https://www.foxtrot.com.ua/uk/shop/televizoriy-hisense-40a5nq.html"
+                "https://www.foxtrot.com.ua/uk/shop/televizoriy-hisense-40a5nq.html",
+                "https://www.foxtrot.com.ua/uk/shop/holodilniki_lg_gw-b509slkm.html"
         );
         Parsing task = new Parsing(urls);
         List<String> results = task.fork().join();
